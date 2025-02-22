@@ -1,3 +1,35 @@
+#######   JOTFORM        ####
+
+
+//ISH AND CHRIS
+
+
+
+
+
+
+
+######      Sheet structure and Organization of the sheet          ############
+
+
+
+
+
+//NIA AND AMARI
+
+
+
+
+
+
+
+
+
+
+####       TRAINING          #####
+
+//MUSTAFA AND KELSEY
+
 # Apps-Script-Scheduling-with-Google-Sheets#
 
 ## 📌 Overview
