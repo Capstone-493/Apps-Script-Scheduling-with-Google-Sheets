@@ -197,3 +197,59 @@ The **Volunteer Training Scheduling System** is an automated solution for **matc
 1. **Clone this repository**
    ```sh
    git clone https://github.com/YOUR-USERNAME/volunteer-scheduling.git
+
+###INSTRUCTIONS FOR SCRIPTING###
+
+📌 Core Scripts You Will Need in Apps Script
+1️⃣ Volunteer-to-Mentor Matching Script (Main Script)
+🔹 Purpose:
+
+Matches Volunteers (from Volunteers_Main) with Mentors (from Mentors_Main) based on Role.
+Ensures mentors are not scheduled during their blackout dates.
+Generates a final training schedule, categorized into separate role-based sheets within a new Google Sheet.
+Runs automatically every Monday at 8 AM for the upcoming training sessions.
+Sends email notifications with the training details.
+🔹 Trigger Type:
+✅ Time-based trigger (Runs every Monday morning).
+
+🔹 Expected Output:
+📁 Final Google Sheet ("Volunteer-Mentor Schedule")
+📄 "Camera Team" | "Audio Team" | "CG Team" | "Lights Team"
+
+2️⃣ Volunteer Profile Generation Script
+🔹 Purpose:
+
+Every time a new volunteer signs up, this script creates an individual sheet within the Volunteers file.
+Stores detailed information about the volunteer (e.g., Name, Contact, Role, Availability, Notes).
+Allows for manual mentor assignments later (if needed).
+🔹 Trigger Type:
+✅ On Form Submit Trigger (Runs when a new entry is added to "Volunteers_Main").
+✅ On Edit Trigger (Runs if data changes).
+
+🔹 Expected Output:
+📁 Inside the "Volunteers" Google Sheet
+📄 Main Sheet (Volunteers_Main) stays intact.
+📄 Individual profile sheets for each volunteer ("John_Doe_Profile", "Jane_Smith_Profile").
+
+3️⃣ Mentor Availability Update Script
+🔹 Purpose:
+
+Allows mentors to update their blackout dates using a JotForm submission.
+Updates only the "Blackout Dates" column in "Mentors_Main", instead of creating new entries.
+🔹 Trigger Type:
+✅ On Form Submit Trigger (Runs when a mentor submits an availability update via JotForm).
+
+🔹 Expected Output:
+
+📄 Mentors_Main stays up-to-date with blackout dates.
+Ensures no duplicate mentor entries while allowing updates.
+📌 Optional Enhancements (Future Considerations)
+4️⃣ Email Notification Script
+💡 This can be built into the Main Matching Script or handled separately.
+🔹 Sends weekly emails on Monday morning to volunteers and mentors.
+🔹 Includes training dates, assigned mentors, and location details.
+
+🔹 Trigger Type:
+✅ Time-based trigger (Monday 8 AM, after schedule is created).
+
+
